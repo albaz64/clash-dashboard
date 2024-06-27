@@ -36,7 +36,7 @@ export function useI18n () {
                 type returnType = Get<LocalizedType[Namespace], Path>
                 const obj = Language[lang][namespace]
                 const objPath = R.stringToPath(path)
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                 
                 return R.pathOr(obj, objPath as any, '' as any) as returnType
             }
             return { t }

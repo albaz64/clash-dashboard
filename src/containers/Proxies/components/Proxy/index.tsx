@@ -64,7 +64,7 @@ export function Proxy (props: ProxyProps) {
     const hasError = useMemo(() => delay === 0, [delay])
     const color = useMemo(
         () => Object.keys(TagColors).find(
-            // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+             
             threshold => (meanDelay || delay) <= TagColors[threshold as keyof typeof TagColors],
         ),
         [delay, meanDelay],

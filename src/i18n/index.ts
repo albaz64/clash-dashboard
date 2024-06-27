@@ -17,7 +17,7 @@ type CN = typeof Language.zh_CN
 
 // type guard for US and CN
 type TrueGuard<T extends true> = T
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 type _equalGuard = TrueGuard<IsEqual<Infer<US>, Infer<CN>>>
 
 export type LocalizedType = US
