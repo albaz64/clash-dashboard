@@ -168,7 +168,7 @@ export default function Connections () {
         getSortedRowModel: getSortedRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
         initialState: {
-            sorting: [{ id: Columns.Time, desc: false }],
+            sorting: [{ id: Columns.Speed, desc: true }],
         },
         columnResizeMode: 'onChange',
         enableColumnResizing: true,
