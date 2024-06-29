@@ -16,13 +16,25 @@ interface ProxyProps extends BaseComponentProps {
 }
 
 const TagColors = {
-    '#909399': 0,
-    '#00c520': 260,
-    '#ff9a28': 600,
-    '#ff3e5e': Infinity,
+    '#999999': 0,
+    '#00CC00': 150,
+    '#FAFA00': 300,
+    '#FFC000': 450,
+    '#F08000': 600,
+    '#FF1400': Infinity,
 }
 
-export function Proxy (props: ProxyProps) {
+const TextColors = {
+    '#E5E5E5': '#000000',
+    '#999999': '#000000',
+    '#00CC00': '#FFFFFF',
+    '#FAFA00': '#000000',
+    '#FFC000': '#000000',
+    '#F08000': '#000000',
+    '#FF1400': '#FFFFFF',
+}
+
+export function Proxy(props: ProxyProps) {
     const { config, className } = props
     const { set } = useProxy()
     const client = useClient()
@@ -64,19 +76,19 @@ export function Proxy (props: ProxyProps) {
     const hasError = useMemo(() => delay === 0, [delay])
     const color = useMemo(
         () => Object.keys(TagColors).find(
-             
+
             threshold => (meanDelay || delay) <= TagColors[threshold as keyof typeof TagColors],
         ),
         [delay, meanDelay],
     )
 
-    const backgroundColor = hasError ? '#E5E7EB' : color
+    const backgroundColor = hasError ? '#E5E5E5' : color
     return (
         <div className={classnames('proxy-item', { 'opacity-50': hasError }, className)}>
             <div className="flex-1">
                 <span
                     className={classnames('rounded-sm py-[3px] px-1 text-[10px] text-white', { 'text-gray-600': hasError })}
-                    style={{ backgroundColor }}>
+                    style={{ backgroundColor, color: TextColors[backgroundColor as keyof typeof TextColors] }}>
                     {config.type}
                 </span>
                 <p className="proxy-name">{config.name}</p>
