@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/Dreamacro/clash/raw/master/docs/logo.png" alt="Clash" width="200">
+    <img src="https://raw.githubusercontent.com/albaz64/clash-dashboard/master/src/assets/logo.png" alt="Clash" width="200">
     <br>
     Clash Dashboard
     <br>
@@ -8,17 +8,17 @@
 <h4 align="center">Web Dashboard for Clash, now host on ClashX</h4>
 
 <p align="center">
-    <a href="https://github.com/Dreamacro/clash-dashboard/actions">
-        <img src="https://img.shields.io/github/actions/workflow/status/Dreamacro/clash-dashboard/ghpages.yml?branch=master&style=flat-square" alt="Github Actions">
+    <a href="https://github.com/albaz64/clash-dashboard/actions">
+        <img src="https://img.shields.io/github/actions/workflow/status/albaz64/clash-dashboard/ghpages.yml?branch=master&style=flat-square" alt="Github Actions">
     </a>
 </p>
 
 ## Features
 
-  - All ClashX configurations
-  - Manage Proxies
-  - Manage Proxy Groups
-  - Realtime Log
+- All ClashX configurations
+- Manage Proxies
+- Manage Proxy Groups
+- Realtime Log
 
 ## Progress
 
@@ -44,13 +44,13 @@ defaults delete com.west2online.ClashX webviewUrl
 This command will start Clash Dashboard at `http://localhost:8080/`
 
 ```bash
-$ pnpm start
+pnpm start
 ```
 
 ### Build for production
 
 ```bash
-$ pnpm build
+pnpm build
 ```
 
 ## Contributors

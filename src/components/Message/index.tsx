@@ -1,6 +1,5 @@
 import classnames from 'classnames'
-import { useLayoutEffect } from 'react'
-import { unmountComponentAtNode } from 'react-dom'
+import { useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import { Icon } from '@components'
@@ -45,12 +44,13 @@ export function Message (props: MessageProps) {
 
     const { visible, show, hide } = useVisible()
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.setTimeout(() => show(), 0)
 
         const id = window.setTimeout(() => {
             hide()
             onClose()
+            removeComponent()
         }, duration)
         return () => window.clearTimeout(id)
     }, [duration, hide, onClose, show])
@@ -69,14 +69,13 @@ export function Message (props: MessageProps) {
 export function showMessage (args: ArgsProps) {
     // create container element
     const container = document.createElement('div')
+    const root = createRoot(container!)
     document.body.appendChild(container)
 
     // remove container when component unmount
     const removeComponent = () => {
-        const isUnMount = unmountComponentAtNode(container)
-        if (isUnMount) {
-            document.body.removeChild(container)
-        }
+        root.unmount()
+        document.body.removeChild(container)
     }
 
     const icon = <Icon type={TYPE_ICON_MAP[args.type]} size={16}></Icon>
@@ -90,7 +89,7 @@ export function showMessage (args: ArgsProps) {
         onClose,
     }
 
-    createRoot(container).render(<Message {...props} />)
+    root.render(<Message {...props} />)
 }
 
 export const info = (

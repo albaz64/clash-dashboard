@@ -30,7 +30,7 @@ export default defineConfig(({ command, mode }) => {
                 start_url: '/',
                 short_name: 'Clash Dashboard',
                 name: 'Clash Dashboard',
-                theme_color: '#FFFFFF',
+                theme_color: '#F4F5F6',
             },
         }),
     ];
