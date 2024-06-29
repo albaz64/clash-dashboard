@@ -20,6 +20,7 @@ const EN = {
             httpProxyPort: 'HTTP proxy port',
             mixedProxyPort: 'Mixed proxy port',
             externalController: 'External controller',
+            reloadConfig: 'Reload config',
         },
         values: {
             cn: '中文',
@@ -29,7 +30,7 @@ const EN = {
             direct: 'Direct',
             script: 'Script',
         },
-        versionString: 'Current ClashX is the latest version：{{version}}',
+        versionString: 'Current ClashX is the latest version: {{version}}',
         checkUpdate: 'Check Update',
         externalControllerSetting: {
             title: 'External Controller',
@@ -40,6 +41,10 @@ const EN = {
             addText: 'Add',
             deleteText: 'Delete',
             deleteErrorText: 'Host not found',
+            messages: {
+                reloadOk: 'Reload success',
+                reloadErr: 'Reload failed',
+            },
         },
     },
     Logs: {
